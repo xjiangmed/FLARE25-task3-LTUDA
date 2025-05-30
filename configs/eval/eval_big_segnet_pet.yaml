@@ -1,10 +1,7 @@
 BASE: ['eval_base.yaml']
 TRAINING_TYPE: 'fine'
 
-# VAL_OUTPUT_PATH: "result/train-ct-test-pet" # The path of inference output directory.
-# VAL_OUTPUT_PATH: "result/train-ctmriul-test-pet_CDA"
-# VAL_OUTPUT_PATH: "result/train-ctfakemri-test-pet"
-VAL_OUTPUT_PATH: "result/train-largescalect-test-pet"
+VAL_OUTPUT_PATH: "result/test-pet" # The path of inference output directory.
 
 DATASET:
   DATASET_NAME: "eval_train-ct"
@@ -16,8 +13,6 @@ DATASET:
   FINE:
     SIZE: [ 96, 128, 128 ]
     PREPROCESS_SIZE: [ 128, 128, 96 ]
-    # SIZE: [ 96, 192, 192 ]
-    # PREPROCESS_SIZE: [ 192, 192, 96 ]
     
 INFERENCE:
   IS_OVERWRITE_PREDICT_MASK: False

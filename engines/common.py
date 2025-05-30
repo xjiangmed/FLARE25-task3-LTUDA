@@ -211,17 +211,17 @@ class Training(object):
             )
             model = build_fine_model(config).cuda()
             
-            # Load Pretrained weight trained on CT data
-            print('*************Load Pretrained weight trained on CT')
-            model_path = config.FINE_MODEL_PATH
-            check_point_name= config.CHECK_POINT_NAME 
-            fine_model_checkpoint = load_checkpoint(model_path, check_point_name)
-            model.load_state_dict(
-                {
-                    k.replace("module.", ""): v
-                    for k, v in fine_model_checkpoint["state_dict"].items()
-                }
-            )
+            # # Load Pretrained weight trained on CT data
+            # print('*************Load Pretrained weight trained on CT')
+            # model_path = config.FINE_MODEL_PATH
+            # check_point_name= config.CHECK_POINT_NAME 
+            # fine_model_checkpoint = load_checkpoint(model_path, check_point_name)
+            # model.load_state_dict(
+            #     {
+            #         k.replace("module.", ""): v
+            #         for k, v in fine_model_checkpoint["state_dict"].items()
+            #     }
+            # )
 
             losses = {
                 "ct": build_loss(

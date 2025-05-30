@@ -1,7 +1,7 @@
 BASE: ["train_base.yaml"]
 
 # load pretrained weights trained on CT data + fakeMRI data
-FINE_MODEL_PATH: "/home/eechengyang/XX/FLARE25-task3-LTUDA/checkpoint_pth/Demo_LargescaleCTl_bigsegnet_fakepetgan_250529_163144/" # The path of the downloaded checkpoint directory.
+FINE_MODEL_PATH: "xx/checkpoint_pth/Demo_LargescaleCTl_bigsegnet_fakepetgan/" # The path of the downloaded checkpoint directory.
 CHECK_POINT_NAME: "final_checkpoint.pth" 
 
 MODEL:
@@ -12,6 +12,7 @@ TRAIN:
   BASE_LR: 5e-5
   WARMUP_LR: 5e-8
   MIN_LR: 5e-7
+  EPOCHS: 100
   
 DATASET:
   DATASET_NAME: 'LargescaleCT_PETul_bigsegnet_CDA'

@@ -1,17 +1,8 @@
 BASE: ['inference_base.yaml']
 TRAINING_TYPE: 'fine'
 
-# VAL_OUTPUT_PATH: "result/train-ct-test-pet" # The path of inference output directory.
 
-# FINE_MODEL_PATH: "/home/xjiangbh/FLARE_work/FLARE25-task3-LTUDA/checkpoint_pth/Demo_CT_MRIul_bigsegnet_CDA_250524_014254/" # The path of the downloaded checkpoint directory.
-# CHECK_POINT_NAME: "final_checkpoint.pth"
-# VAL_OUTPUT_PATH: "result/train-ctmriul-test-pet_CDA" # The path of inference output directory.
-
-# FINE_MODEL_PATH: "/home/xjiangbh/FLARE_work/FLARE25-task3-LTUDA/checkpoint_pth/Demo_CT_MRIul_bigsegnet_fakemri_250526_141808/" # The path of the downloaded checkpoint directory.
-# CHECK_POINT_NAME: "final_checkpoint.pth"
-# VAL_OUTPUT_PATH: "result/train-ctfakemri-test-pet" # The path of inference output directory.
-
-FINE_MODEL_PATH: "/home/xjiangbh/FLARE_work/FLARE25-task3-LTUDA/checkpoint_pth/Demo_LargescaleCT_bigsegnet_250526_173209/" # The path of the downloaded checkpoint directory.
+FINE_MODEL_PATH: "xx/checkpoint_pth/Demo_LargescaleCT_PETul_bigsegnet_CDA/" # The path of the downloaded checkpoint directory.
 CHECK_POINT_NAME: "final_checkpoint.pth"
 VAL_OUTPUT_PATH: "result/train-largescalect-test-pet" # The path of inference output directory.
 

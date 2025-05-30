@@ -98,8 +98,8 @@ python ./preprocess/data_preprocess_ul_bigsegnet.py --cfg ./configs/preprocess/p
 ```
 ### step2: training
 ```bash
-python train.py --cfg ./configs/train/train_big_segnet_ctl_mriul_CDA.yaml
-python train.py --cfg ./configs/train/train_big_segnet_ctl_petul_CDA.yaml
+python train_CDA.py --cfg ./configs/train/train_big_segnet_ctl_mriul_CDA.yaml
+python train_CDA.py --cfg ./configs/train/train_big_segnet_ctl_petul_CDA.yaml
 ```
 
 ## Inference
@@ -116,7 +116,7 @@ python inference.py --cfg ./configs/inference/inference_big_segnet_pet.yaml
 
 To compute the evaluation metrics, run:
 
-```eval
+```bash
 python eval.py --cfg ./configs/eval/eval_big_segnet_mri.yaml
 python eval_pet.py --cfg ./configs/eval/eval_big_segnet_pet.yaml
 ```
@@ -125,24 +125,41 @@ python eval_pet.py --cfg ./configs/eval/eval_big_segnet_pet.yaml
 
 To run the inference using Docker, use the following command:
 
-> Note: This is the official inference script. When running predictions, please replace `/data/js/inputs/` and `/data/js/outputs/` with your own input and output directories. The input MR images must be in `.nii.gz` format.
+> Note: This is the official inference script. When running predictions, please replace `/data/js/inputs/` and `/data/js/outputs/` with your own input and output directories. The input MRI or PET images must be in `.nii.gz` format.
 
 ```bash
-docker container run --gpus "device=0" \
-    -m 28G \
-    --name tju_vil_pioneers \
-    --rm \
-    -v /data/js/inputs/:/workspace/inputs/ \
-    -v /data/js/outputs/:/workspace/outputs/ \
-    tju_vil_pioneers:latest /bin/bash -c "sh predict.sh"
+docker run --gpus "device=0"  \
+   -m 28G  \
+   --rm  \
+   -v  /data/js/inputs/:/workspace/inputs/ \
+   -v /data/js/outputs/:/workspace/outputs/ \
+   omnigraft:latest /bin/bash -c "sh predict.sh mri"
+
+docker run --gpus "device=0"  \
+   -m 28G  \
+   --rm  \
+   -v  /data/js/inputs/:/workspace/inputs/ \
+   -v /data/js/outputs/:/workspace/outputs/ \
+   omnigraft:latest /bin/bash -c "sh predict.sh pet"
 ```
 
-You can download the Docker image from:
+Docker Container download link []() 
 
-Docker Container download link [BaiduNetDisk](https://pan.baidu.com/s/1kP8i1RnzMK4coFvjymWHHQ) 
+## 📋 Results
 
-Extraction code: o9za
+Our method achieves the following performance on [FLARE25](https://www.codabench.org/competitions/2296/)
 
+MRI Data
+| Dataset Name       | DSC(%) | NSD(%) |
+|--------------------|:------:|:------:|
+| Validation Dataset | 75.92% | 82.02% |
+| Test Dataset       | (?) | (?) |
+
+PET Data
+| Dataset Name       | DSC(%) | NSD(%) |
+|--------------------|:------:|:------:|
+| Validation Dataset | 77.30% | 61.23% |
+| Test Dataset       | (?) | (?) |
 
 ## Acknowledgement
 

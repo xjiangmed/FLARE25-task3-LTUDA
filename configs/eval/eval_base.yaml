@@ -7,8 +7,7 @@ COARSE_MODEL_PATH: "checkpoints_dir" # The path of the downloaded checkpoint dir
 COARSE_CHECK_POINT_NAME: "coarse_checkpoint.pth"
 
 DATASET:
-  # BASE_DIR: 'datasets' # The path of the current project datasets directory.
-  BASE_DIR: "/nfs/scratch/xjiangbh/FLARE/small-scale-data"
+  BASE_DIR: "/nfs/scratch/xjiangbh/FLARE/large-scale-data" # The path of the current project datasets directory.
 
 
 INFERENCE:

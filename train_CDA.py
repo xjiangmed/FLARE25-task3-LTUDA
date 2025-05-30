@@ -4,7 +4,7 @@ import sys
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from engines.common_CDA import Training_CDA_v2, merge_tph_processed_data_img_and_label
+from engines.common_CDA import Training_CDA, merge_tph_processed_data_img_and_label
 
 from utils.common_function import parse_option, is_directory_only_symlinks
 
@@ -45,5 +45,5 @@ if __name__ == "__main__":
         print('Finsh TPH Data Processed!')
         print('Begin Trainning...')
 
-    trainer = Training_CDA_v2(config)
+    trainer = Training_CDA(config)
     trainer.train()

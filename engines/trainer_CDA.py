@@ -10,7 +10,7 @@ from torch.nn.functional import one_hot
 import wandb
 import shutil
 from copy import deepcopy
-from .utils_CDA import obtain_bbox, mix, style_mix
+from .utils_CDA import obtain_bbox, mix
 
 
 class ModelEMA(object):
@@ -116,8 +116,8 @@ class Trainer_CDA:
                     logger.info(f'## Info for epoch {epoch} ## ')
                     for k, v in results.items():
                         logger.info(f'{str(k):15s}: {v}')
-            # if epoch % self.config.TRAIN.SAVE_PERIOD == 0 and self._get_rank()==0:
-            if epoch % 5 == 0 and self._get_rank()==0:
+            if epoch % self.config.TRAIN.SAVE_PERIOD == 0 and self._get_rank()==0:
+            # if epoch % 5 == 0 and self._get_rank()==0:
                 self._save_checkpoint(epoch)
                 self._save_checkpoint_teacher(epoch)
 

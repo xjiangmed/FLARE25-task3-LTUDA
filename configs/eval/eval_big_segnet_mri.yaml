@@ -1,16 +1,7 @@
 BASE: ['eval_base.yaml']
 TRAINING_TYPE: 'fine'
 
-# VAL_OUTPUT_PATH: "result/train-ct-test-mri" # The path of inference output directory.
-# VAL_OUTPUT_PATH: "result/train-ctmriul-test-mri_CDA"
-# VAL_OUTPUT_PATH: "result/train-ctfakemri-test-mri"
-# VAL_OUTPUT_PATH: "result/train-largescalect-test-mri"
-# VAL_OUTPUT_PATH: "result/train-ctfakemriGAN-test-mri"
-# VAL_OUTPUT_PATH: "result/train-largescalectfakemriGAN-test-mri-ep148"
-# VAL_OUTPUT_PATH: "result/train-largescalectmriul-test-mri-ep39"
-# VAL_OUTPUT_PATH: "result/train-largescalectmriul-test-mri-re-ep25/"
-# VAL_OUTPUT_PATH: "result/train-largescalectmriul-test-mri-re-ep25ema"
-VAL_OUTPUT_PATH: "result/train-largescalectmriul-test-mri-re-ep35ema/"
+VAL_OUTPUT_PATH: "result/test-mri" # The path of inference output directory.
 
 DATASET:
   BASE_DIR: "/nfs/scratch/xjiangbh/FLARE/large-scale-data/"

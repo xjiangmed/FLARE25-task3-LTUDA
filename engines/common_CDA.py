@@ -207,8 +207,8 @@ class Training_CDA(object):
                 config.DATASET.FINE.NUM_EACH_EPOCH,
             )
             model = build_fine_model(config).cuda() #student model
-            # Load Pretrained weight trained on labeled CT: labeled CT-> labeled CT+unlabeled MRI
-            print('*************Load Pretrained weight trained on labeled CT')
+            # Load Pretrained weight trained on CT + Fake MRI/PET data
+            print('*************Load Pretrained weight trained on CT + Fake MRI/PET data')
             model_path = config.FINE_MODEL_PATH
             check_point_name= config.CHECK_POINT_NAME 
             fine_model_checkpoint = load_checkpoint(model_path, check_point_name)
@@ -261,18 +261,7 @@ class Training_CDA(object):
                 config.MODEL.COARSE.POOL_OP_KERNEL_SIZES,
                 config.DATASET.COARSE.NUM_EACH_EPOCH,
             )
-            model = build_coarse_model(config).cuda() #student model
-            # Load Pretrained weight trained on labeled CT: labeled CT-> labeled CT+unlabeled MRI
-            # print('*************Load Pretrained weight trained on labeled CT')
-            # model_path = config.COARSE_MODEL_PATH
-            # check_point_name= config.COARSE_CHECK_POINT_NAME 
-            # coarse_model_checkpoint = load_checkpoint(model_path, check_point_name)
-            # model.load_state_dict(
-            #     {
-            #         k.replace("module.", ""): v
-            #         for k, v in coarse_model_checkpoint["state_dict"].items()
-            #     }
-            # )
+            model = build_coarse_model(config).cuda() 
             
             losses = {
                 "ct": build_loss(

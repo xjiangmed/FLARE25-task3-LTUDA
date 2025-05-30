@@ -129,8 +129,7 @@ class DC_and_CE_ignore_edge_loss(nn.Module):
         dc_loss = self.dc(net_output, target,
                           loss_mask=mask) if self.weight_dice != 0 else 0
         if self.log_dice:
-            # dc_loss = -torch.log(-dc_loss)
-            dc_loss = -torch.log(-dc_loss + 1e-10)
+            dc_loss = -torch.log(-dc_loss)
 
         ce_loss = self.ce(
             net_output, target[:, 0].long()) if self.weight_ce != 0 else 0
@@ -185,8 +184,7 @@ class DC_and_CE_loss(nn.Module):
                           loss_mask=mask) if self.weight_dice != 0 else 0
        
         if self.log_dice:
-            # dc_loss = -torch.log(-dc_loss)
-            dc_loss = -torch.log(-dc_loss + 1e-10)
+            dc_loss = -torch.log(-dc_loss)
 
         ce_loss = self.ce(
             net_output, target[:, 0].long()) if self.weight_ce != 0 else 0
