@@ -1,7 +1,7 @@
-# FLARE24-Task3
+# FLARE24-Task3-LTUDA
 
 ## Overview
-This work solves the unsupervised cross-modal domain adaptation task by generating synthetic MRI/PET data and adopting a teacher-student semi-supervised training framework with cross-set data augmentation (CDA) (which is proposed by our work [Labeled-to-unlabeled distribution alignment for partially-supervised multi-organ medical image segmentation]). For details, please see the flowchart below:
+This work solves the unsupervised cross-modal domain adaptation task by generating synthetic MRI/PET data and adopting a teacher-student semi-supervised training framework with cross-set data augmentation (CDA) (which is proposed by our work [Labeled-to-unlabeled distribution alignment for partially-supervised multi-organ medical image segmentation](https://www.sciencedirect.com/science/article/abs/pii/S1361841524002585)). For details, please see the flowchart below:
 
 <div align=center>
 <img src="./assets/pipeline.png" alt="Pipeline" width="800"/>
