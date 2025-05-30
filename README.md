@@ -133,14 +133,14 @@ docker run --gpus "device=0"  \
    --rm  \
    -v  /data/js/inputs/:/workspace/inputs/ \
    -v /data/js/outputs/:/workspace/outputs/ \
-   omnigraft:latest /bin/bash -c "sh predict.sh mri"
+   omnigraft:latest /bin/bash -c "sh predict.sh MRI"
 
 docker run --gpus "device=0"  \
    -m 28G  \
    --rm  \
    -v  /data/js/inputs/:/workspace/inputs/ \
    -v /data/js/outputs/:/workspace/outputs/ \
-   omnigraft:latest /bin/bash -c "sh predict.sh pet"
+   omnigraft:latest /bin/bash -c "sh predict.sh PET"
 ```
 
 Docker Container download link []() 
