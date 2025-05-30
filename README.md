@@ -35,7 +35,7 @@ DATASET:
 3. Please ensure to use absolute paths instead of relative paths to avoid potential path resolution issues.
 
 ## Dataset
-The training Data and validation data are provided by the [FLARE25](https://www.codabench.org/competitions/2296/). In short, there are 2050 CT data (50 labeled data and 2000 pseudo-labeled data), 4817 unlabeled MRI data and 1000 unlabeled PET data for training.
+The training Data and validation data are provided by the [FLARE25](https://www.codabench.org/competitions/2296/). In short, there are 2050 CT data (50 labeled data and 2000 pseudo-labeled data (we use the pseudo labels provided by blackbean)), 4817 unlabeled MRI data and 1000 unlabeled PET data for training.
 
 ```
 |-- datasets
