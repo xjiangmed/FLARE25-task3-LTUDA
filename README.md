@@ -163,4 +163,4 @@ PET Data
 
 ## Acknowledgement
 
- We thank the contributors of [FLARE24-tasks](https://github.com/TJUQiangChen/FLARE24-task3/tree/master).
+ We thank the contributors of [FLARE24-task3](https://github.com/TJUQiangChen/FLARE24-task3/tree/master).
