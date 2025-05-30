@@ -105,7 +105,6 @@ python train_CDA.py --cfg ./configs/train/train_big_segnet_ctl_petul_CDA.yaml
 ## Inference
 
 To infer the testing cases, run this command:
-An experiment of small segnet
 
 ```bash
 python inference.py --cfg ./configs/inference/inference_big_segnet_mri.yaml 
