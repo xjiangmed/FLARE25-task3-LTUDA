@@ -125,21 +125,21 @@ python eval_pet.py --cfg ./configs/eval/eval_big_segnet_pet.yaml
 
 To run the inference using Docker, use the following command:
 
-> Note: This is the official inference script. When running predictions, please replace `/data/js/inputs/` and `/data/js/outputs/` with your own input and output directories. The input MRI or PET images must be in `.nii.gz` format.
+> Note: This is the official inference script. When running predictions, please replace `input_dir` and `output_dir` with your own input and output directories. The input MRI or PET images must be in `.nii.gz` format.
 
 ```bash
 docker run --gpus "device=0"  \
    -m 28G  \
    --rm  \
-   -v  /data/js/inputs/:/workspace/inputs/ \
-   -v /data/js/outputs/:/workspace/outputs/ \
+   -v  input_dir:/workspace/inputs/ \
+   -v  output_dir:/workspace/outputs/ \
    omnigraft:latest /bin/bash -c "sh predict.sh MRI"
 
 docker run --gpus "device=0"  \
    -m 28G  \
    --rm  \
-   -v  /data/js/inputs/:/workspace/inputs/ \
-   -v /data/js/outputs/:/workspace/outputs/ \
+   -v  input_dir:/workspace/inputs/ \
+   -v  output_dir:/workspace/outputs/ \
    omnigraft:latest /bin/bash -c "sh predict.sh PET"
 ```
 
