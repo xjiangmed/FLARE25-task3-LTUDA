@@ -1,0 +1,9 @@
+TRAINING_TYPE: 'coarse-fine'  # this is small segnet demo. if using big segnet.this change to 'fine'
+
+MR_DATA_PREPROCESS:
+  ROOT_PATH: "/nfs/scratch/xjiangbh/FLARE/large-scale-data/" # The path of the current project datasets directory. please use absolute path!!! because we use symlink
+DATASET:
+  BASE_DIR: "/nfs/scratch/xjiangbh/FLARE/large-scale-data/" # The path of the current project datasets directory. please use absolute path!!! because we use symlink
+VAL:
+  TTA: False
+  EVAL_OUTPUT_RESULT: "/temp"

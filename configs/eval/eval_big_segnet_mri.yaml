@@ -1,0 +1,28 @@
+BASE: ['eval_base.yaml']
+TRAINING_TYPE: 'fine'
+
+# VAL_OUTPUT_PATH: "result/train-ct-test-mri" # The path of inference output directory.
+# VAL_OUTPUT_PATH: "result/train-ctmriul-test-mri_CDA"
+# VAL_OUTPUT_PATH: "result/train-ctfakemri-test-mri"
+# VAL_OUTPUT_PATH: "result/train-largescalect-test-mri"
+# VAL_OUTPUT_PATH: "result/train-ctfakemriGAN-test-mri"
+# VAL_OUTPUT_PATH: "result/train-largescalectfakemriGAN-test-mri-ep148"
+# VAL_OUTPUT_PATH: "result/train-largescalectmriul-test-mri-ep39"
+# VAL_OUTPUT_PATH: "result/train-largescalectmriul-test-mri-re-ep25/"
+# VAL_OUTPUT_PATH: "result/train-largescalectmriul-test-mri-re-ep25ema"
+VAL_OUTPUT_PATH: "result/train-largescalectmriul-test-mri-re-ep35ema/"
+
+DATASET:
+  BASE_DIR: "/nfs/scratch/xjiangbh/FLARE/large-scale-data/"
+  DATASET_NAME: "eval_train-ct"
+  VAL_IMAGE_PATH: "MRI/PublicValidation/MRI_imagesVal/" # ground-truth MR
+  VAL_MASK_PATH: 'MRI/PublicValidation/MRI_labelsVal'  # ground-truth MR label
+  VAL_CHANGE_SPACING: False
+  DA:
+    DO_MIRROR: False
+  FINE:
+    SIZE: [ 96, 128, 128 ]
+    PREPROCESS_SIZE: [ 128, 128, 96 ]
+    
+INFERENCE:
+  IS_OVERWRITE_PREDICT_MASK: False

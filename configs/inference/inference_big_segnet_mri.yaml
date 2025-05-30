@@ -1,0 +1,51 @@
+BASE: ['inference_base.yaml']
+TRAINING_TYPE: 'fine'
+
+# VAL_OUTPUT_PATH: "result/train-ct-test-mri" # The path of inference output directory.
+
+# FINE_MODEL_PATH: "/home/xjiangbh/FLARE_work/FLARE25-task3-LTUDA/checkpoint_pth/Demo_CT_MRIul_bigsegnet_CDA_250524_014254/" # The path of the downloaded checkpoint directory.
+# CHECK_POINT_NAME: "final_checkpoint.pth"
+# VAL_OUTPUT_PATH: "result/train-ctmriul-test-mri_CDA" # The path of inference output directory.
+
+# FINE_MODEL_PATH: "/home/xjiangbh/FLARE_work/FLARE25-task3-LTUDA/checkpoint_pth/Demo_CT_MRIul_bigsegnet_fakemri_250526_141808/" # The path of the downloaded checkpoint directory.
+# CHECK_POINT_NAME: "final_checkpoint.pth"
+# VAL_OUTPUT_PATH: "result/train-ctfakemri-test-mri" # The path of inference output directory.
+
+# FINE_MODEL_PATH: "/home/xjiangbh/FLARE_work/FLARE25-task3-LTUDA/checkpoint_pth/Demo_LargescaleCT_bigsegnet_250526_173209/" # The path of the downloaded checkpoint directory.
+# CHECK_POINT_NAME: "final_checkpoint.pth"
+# VAL_OUTPUT_PATH: "result/train-largescalect-test-mri" # The path of inference output directory.
+
+# FINE_MODEL_PATH: "/home/xjiangbh/FLARE_work/FLARE25-task3-LTUDA/checkpoint_pth/Demo_CTl_bigsegnet_fakemrigan_250527_165319/" # The path of the downloaded checkpoint directory.
+# CHECK_POINT_NAME: "final_checkpoint.pth"
+# VAL_OUTPUT_PATH: "result/train-ctfakemriGAN-test-mri" # The path of inference output directory.
+
+# FINE_MODEL_PATH: "/home/xjiangbh/FLARE_work/FLARE25-task3-LTUDA/checkpoint_pth/Demo_CTl_bigsegnet_fakemrigan_250528_122458/" # The path of the downloaded checkpoint directory.
+# CHECK_POINT_NAME: "final_checkpoint.pth"
+# VAL_OUTPUT_PATH: "result/train-ctfakemriGAN-test-mri" # The path of inference output directory.
+
+# FINE_MODEL_PATH: "/home/xjiangbh/FLARE_work/FLARE25-task3-LTUDA/checkpoint_pth/Demo_LargescaleCTl_bigsegnet_fakemrigan_250528_200648/" # The path of the downloaded checkpoint directory.
+# CHECK_POINT_NAME: "final_checkpoint.pth"
+# VAL_OUTPUT_PATH: "result/train-largescalectfakemriGAN-test-mri-ep148" # The path of inference output directory.
+
+# FINE_MODEL_PATH: "/home/xjiangbh/FLARE_work/FLARE25-task3-LTUDA/checkpoint_pth/Demo_LargescaleCT_MRIul_bigsegnet_CDA_250529_110215/" # The path of the downloaded checkpoint directory.
+# CHECK_POINT_NAME: "25_checkpoint.pth"
+# VAL_OUTPUT_PATH: "result/train-largescalectmriul-test-mri-ep25" # The path of inference output directory.
+
+FINE_MODEL_PATH: "/home/xjiangbh/FLARE_work/FLARE25-task3-LTUDA/checkpoint_pth/Demo_LargescaleCT_MRIul_bigsegnet_CDA_re_250530_122016/" # The path of the downloaded checkpoint directory.
+CHECK_POINT_NAME: "60_checkpoint_ema.pth"
+VAL_OUTPUT_PATH: "result/train-largescalectmriul-test-mri-re-ep60ema" # The path of inference output directory.
+
+DATASET:
+  BASE_DIR: "/nfs/scratch/xjiangbh/FLARE/large-scale-data/"
+  DATASET_NAME: 'inference_train-ct'
+  VAL_IMAGE_PATH: "MRI/PublicValidation/MRI_imagesVal/"
+  VAL_CHANGE_SPACING: False
+  DA:
+    DO_MIRROR: False
+  FINE:
+    SIZE: [ 96, 128, 128 ]
+    PREPROCESS_SIZE: [ 128, 128, 96 ]
+    
+VAL:
+  IS_CROP: False
+  TTA: True

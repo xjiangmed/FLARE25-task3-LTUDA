@@ -1,0 +1,29 @@
+TRAINING_TYPE: 'fine'
+FINE_MODEL_PATH: "checkpoints_dir" # The path of the downloaded checkpoint directory.
+CHECK_POINT_NAME: "fine_checkpoint.pth"
+COARSE_MODEL_PATH: "checkpoints_dir" # The path of the downloaded checkpoint directory.
+COARSE_CHECK_POINT_NAME: "coarse_checkpoint.pth"
+FINETUNE: False
+
+DATASET:
+  DATASET_NAME: 'Raw'
+  BASE_DIR: "/nfs/scratch/xjiangbh/FLARE/small-scale-data" # The path of the current project datasets directory. # please use absolute path!!! because we use symlink
+  DA:
+    DO_MIRROR: True
+
+DATALOADER:
+  BATCH_SIZE: 1
+  NUM_WORKERS: 8
+
+TRAIN:
+  EPOCHS: 300
+  MULTI_TASK:
+    IS_OPEN: False
+    CLASS_NUM: 2
+  SELECT_IMPORT_VOXEL:
+    IS_OPEN: False
+    DROP_VOXEL: False
+    UPDATE_LOSS_WEIGHT: False
+
+LOSS:
+  FLARE24_CHANGE_WEIGHT: False

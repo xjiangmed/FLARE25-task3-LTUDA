@@ -1,0 +1,22 @@
+BASE: ["preprocess_base.yaml"]
+
+TRAINING_TYPE: 'fine'
+# stage1 - preprocess
+MR_DATA_PREPROCESS:
+  STAGE: 1
+
+INFERENCE:
+  IS_OVERWRITE_PREDICT_MASK: True
+  SAVE_SOFTMAX: False
+
+VERSION: "preprocess_step1_MRIul"
+
+# Unlabeled MRI: bigsegnet
+DATASET:
+  TRAIN_IMAGE_PATH: "MRI/Training/MRI_image/"
+  IS_ABDOMEN_CROP: False
+  FINE:
+    PROPRECESS_PATH: "processed_data/fine/big_segnet/MRI_unlabeled"
+    SIZE: [ 96, 128, 128 ]
+    PREPROCESS_SIZE: [ 128, 128, 96 ]
+    

@@ -1,0 +1,17 @@
+BASE: ["train_base.yaml"]
+
+
+DATASET:
+  DATASET_NAME: 'LargescaleCT_bigsegnet'
+  BASE_DIR: "/nfs/scratch/xjiangbh/FLARE/large-scale-data/"
+  FINE:
+    SPLIT_PREPROCESS_PATH: [
+      'processed_data/fine/big_segnet/ct',
+    ]
+    PROPRECESS_PATH: "processed_data/fine/combined_data/big_segnet"
+    SIZE: [ 96, 128, 128 ]
+    PREPROCESS_SIZE: [ 128, 128, 96 ]
+
+DATALOADER:
+  BATCH_SIZE: 4
+  NUM_WORKERS: 0
